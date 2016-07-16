@@ -1,0 +1,25 @@
+<%= simple_form_for @energy_card do |f| %>
+  <% if @energy_card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@energy_card.errors.count, "error") %> prohibited this energy_card from being saved:</h2>
+
+      <ul>
+      <% @energy_card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :element_type, as: :select,
+    collection: EnergyCard.element_types,
+    selected: @energy_card.element_type %>
+  <%= f.input :quantity %>
+  
+  <!-- <%= f.label :element_type %>
+  <%= f.select :element_type, EnergyCard.element_types %> -->
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
