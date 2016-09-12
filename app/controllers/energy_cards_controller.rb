@@ -1,3 +1,4 @@
+#meiau
 class EnergyCardsController < ApplicationController
     before_action :set_energy_card, only: [:show, :edit, :update, :destroy]
 
