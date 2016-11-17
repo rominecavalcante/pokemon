@@ -11,10 +11,13 @@ development:
   <<: *default
   database: pokemon_development
 
-test:
+test: &test
   <<: *default
   database: pokemon_test
 
 production:
   <<: *default
   database: pokemon_production
+
+cucumber:
+  <<: *test
